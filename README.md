@@ -3,7 +3,7 @@ GeoIP lookup
 Generic PHP-codebase to easily switch between MaxMind/IP2Location.
 
 Lightweight codebase for MaxMind and IP2Location.
-- No composer/autoload for MaxMind
+- No composer/autoload for MaxMind (phar+binfile)
 - IP2Location without autoload/mysql (binfile)
 
 Example
