@@ -1,5 +1,8 @@
 GeoIP lookup
 =============
+Lightweight codebase for MaxMind and IP2Location.
+- No composer/autoload for MaxMind
+- IP2Location without MySQL (binfile)
 
 MaxMind
 ```
