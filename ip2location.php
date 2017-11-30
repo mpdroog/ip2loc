@@ -1,5 +1,5 @@
 <?php
-require 'vendor/autoload.php';
+require __DIR__ . '/vendor/ip2location/ip2location-php/IP2Location.php';
 $f = "/usr/local/share/GeoIP/IP2LOCATION-LITE-DB11.BIN";
 if (! filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4)) {
     // IPv6
