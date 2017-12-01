@@ -9,6 +9,15 @@ function ip2loc($ip) {
     $db = new \IP2Location\Database($f, \IP2Location\Database::FILE_IO);
     $records = $db->lookup($ip, \IP2Location\Database::ALL);
 
+    if ($records["cityName"] === \IP2Location\Database::INVALID_IP_ADDRESS) {
+        $records['ipAddress'] = $ip;
+        $records['ipVersion'] = "";
+        $records['countryCode'] = "";
+        $records['cityName'] = "";
+        $records['latitude'] = "";
+        $records['longitude'] = "";
+    }
+
     return [
         "ip" => $records['ipAddress'],
         "ipv" => $records['ipVersion'],
