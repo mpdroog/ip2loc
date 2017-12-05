@@ -1,5 +1,10 @@
 <?php
 function ip2loc($ip) {
+    $idx = strpos($ip, ",");
+    if ($idx !== false) {
+        $ip = substr($ip, 0, $idx);
+    }
+
     require_once __DIR__ . '/vendor/ip2location/ip2location-php/IP2Location.php';
     $f = "/usr/local/share/GeoIP/IP2LOCATION-LITE-DB11.BIN";
     if (! filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4)) {
@@ -29,6 +34,11 @@ function ip2loc($ip) {
 }
 
 function maxmind($ip) {
+    $idx = strpos($ip, ",");
+    if ($idx !== false) {
+        $ip = substr($ip, 0, $idx);
+    }
+
     require_once __DIR__ . '/geoip2.phar';
     $reader = new \GeoIp2\Database\Reader('/usr/local/share/GeoIP/GeoLite2-City.mmdb');
     $record = $reader->city($ip);
