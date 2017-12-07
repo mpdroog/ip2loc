@@ -66,7 +66,7 @@ vi /etc/cron.d/geoip
 @daily www-data wget -q "http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.mmdb.gz" -O /usr/local/share/GeoIP/GeoLite2-City.mmdb.gz && gzip -d /usr/local/share/GeoIP/GeoLite2-City.mmdb.gz -f
 
 # IP2Loc
-@daily www-data wget -q "http://www.ip2location.com/download/?token=0TZdN4zFJFYvV1crcKnodfdRZPG5C5eDZdRMiqr16qx1rKtEuQ2H6gy65fcIkqmk&file=DB11LITEBIN" -O /usr/local/share/GeoIP/ip2loc.zip && cd /usr/local/share/GeoIP && unzip -o -q ip2loc.zip
-@daily www-data wget -q "http://www.ip2location.com/download/?token=0TZdN4zFJFYvV1crcKnodfdRZPG5C5eDZdRMiqr16qx1rKtEuQ2H6gy65fcIkqmk&file=DB11LITEBINIPV6" -O /usr/local/share/GeoIP/ip2loc.zip && cd /usr/local/share/GeoIP && unzip -o -q ip2loc.zip
+@daily www-data wget -q "http://www.ip2location.com/download/?token=0TZdN4zFJFYvV1crcKnodfdRZPG5C5eDZdRMiqr16qx1rKtEuQ2H6gy65fcIkqmk&file=DB11LITEBIN" -O /usr/local/share/GeoIP/DB11LITEBIN.zip && cd /usr/local/share/GeoIP && unzip -o -q DB11LITEBIN.zip
+@daily www-data wget -q "http://www.ip2location.com/download/?token=0TZdN4zFJFYvV1crcKnodfdRZPG5C5eDZdRMiqr16qx1rKtEuQ2H6gy65fcIkqmk&file=DB11LITEBINIPV6" -O /usr/local/share/GeoIP/DB11LITEBINIPV6.zip && cd /usr/local/share/GeoIP && unzip -o -q DB11LITEBINIPV6.zip
 ...
 ```
