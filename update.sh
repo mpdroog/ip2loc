@@ -16,8 +16,13 @@ cd /tmp/geoip
 unzip -o -q DB11LITEBINIPV6.zip
 
 # Maxmind
-wget -q "http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.mmdb.gz" -O /tmp/geoip/GeoLite2-City.mmdb.gz
-gzip -d /tmp/geoip/GeoLite2-City.mmdb.gz -f
+wget -q "https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-City&license_key=HIDDEN&suffix=tar.gz" -O /tmp/geoip/city.mmdb.tgz
+wget -q "https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-ASN&license_key=HIDDEN&suffix=tar.gz" -O /tmp/geoip/asn.mmdb.tgz
 
-rm *.zip
+tar -zxf /tmp/geoip/city.mmdb.tgz -C /tmp/geoip --strip-components=1
+tar -zxf /tmp/geoip/asn.mmdb.tgz -C /tmp/geoip --strip-components=1
+
+mv /tmp/geoip/GeoLite2-City.mmdb /usr/local/share/GeoIP/city.mmdb
+mv /tmp/geoip/GeoLite2-ASN.mmdb /usr/local/share/GeoIP/asn.mmdb
+
 cp -R * "/usr/local/share/GeoIP" && rm -rf "/tmp/geoip"
