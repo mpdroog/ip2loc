@@ -40,7 +40,7 @@ function maxmind($ip) {
     }
 
     require_once __DIR__ . '/geoip2.phar';
-    $reader = new \GeoIp2\Database\Reader('/usr/local/share/GeoIP/GeoLite2-City.mmdb');
+    $reader = new \GeoIp2\Database\Reader('/usr/local/share/GeoIP/country.mmdb');
     $record = $reader->city($ip);
 
     return [
@@ -50,5 +50,20 @@ function maxmind($ip) {
         "city" => $record->city->name,
         "lat" => $record->location->latitude,
         "long" => $record->location->longitude
+    ];
+}
+function maxmind_asn($ip) {
+    $idx = strpos($ip, ",");
+    if ($idx !== false) {
+        $ip = substr($ip, 0, $idx);
+    }
+
+    require_once __DIR__ . '/geoip2.phar';
+    $reader = new \GeoIp2\Database\Reader('/usr/local/share/GeoIP/asn.mmdb');
+    $record = $reader->asn($ip);
+
+    return [
+        "asn" => $record->autonomousSystemNumber,
+        "company" => $record->autonomousSystemOrganization
     ];
 }
