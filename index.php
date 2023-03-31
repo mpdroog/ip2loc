@@ -62,7 +62,6 @@ function maxmind_asn($ip) {
         $ip = substr($ip, 0, $idx);
     }
 
-    require_once __DIR__ . '/geoip2.phar';
     $reader = new \GeoIp2\Database\Reader('/usr/local/share/GeoIP/asn.mmdb');
     $record = $reader->asn($ip);
 
