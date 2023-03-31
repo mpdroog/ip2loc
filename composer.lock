@@ -61,25 +61,6 @@
                 "ssl",
                 "tls"
             ],
-            "support": {
-                "irc": "irc://irc.freenode.org/composer",
-                "issues": "https://github.com/composer/ca-bundle/issues",
-                "source": "https://github.com/composer/ca-bundle/tree/1.3.5"
-            },
-            "funding": [
-                {
-                    "url": "https://packagist.com",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/composer",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2023-01-11T08:27:00+00:00"
         },
         {
@@ -138,16 +119,16 @@
         },
         {
             "name": "ip2location/ip2location-php",
-            "version": "8.0.2",
+            "version": "8.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/chrislim2888/IP2Location-PHP-Module.git",
-                "reference": "f91778011049b808d91f956710a81eb750871989"
+                "reference": "4c501aa1f666ae85eab84d4df9d19399f2e6ce15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/chrislim2888/IP2Location-PHP-Module/zipball/f91778011049b808d91f956710a81eb750871989",
-                "reference": "f91778011049b808d91f956710a81eb750871989",
+                "url": "https://api.github.com/repos/chrislim2888/IP2Location-PHP-Module/zipball/4c501aa1f666ae85eab84d4df9d19399f2e6ce15",
+                "reference": "4c501aa1f666ae85eab84d4df9d19399f2e6ce15",
                 "shasum": ""
             },
             "type": "library",
@@ -158,7 +139,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "LGPLv3"
+                "MIT"
             ],
             "authors": [
                 {
@@ -174,7 +155,7 @@
                 "ip2location",
                 "ip2locationlite"
             ],
-            "time": "2016-10-02T02:03:58+00:00"
+            "time": "2020-11-23T04:30:39+00:00"
         },
         {
             "name": "maxmind-db/reader",
@@ -235,10 +216,6 @@
                 "geolocation",
                 "maxmind"
             ],
-            "support": {
-                "issues": "https://github.com/maxmind/MaxMind-DB-Reader-php/issues",
-                "source": "https://github.com/maxmind/MaxMind-DB-Reader-php/tree/v1.11.0"
-            },
             "time": "2021-10-18T15:23:10+00:00"
         },
         {
@@ -286,10 +263,6 @@
             ],
             "description": "Internal MaxMind Web Service API",
             "homepage": "https://github.com/maxmind/web-service-common-php",
-            "support": {
-                "issues": "https://github.com/maxmind/web-service-common-php/issues",
-                "source": "https://github.com/maxmind/web-service-common-php/tree/v0.9.0"
-            },
             "time": "2022-03-28T17:43:20+00:00"
         }
     ],
@@ -300,6 +273,5 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
-    "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "platform-dev": []
 }
