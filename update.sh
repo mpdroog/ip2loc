@@ -1,8 +1,9 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Download latest geoip db's
 set -euo pipefail
 IFS=$'\n\t'
-source config.sh
+DIR="$(cd -P "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source $DIR/config.sh
 
 if [[ -z "$IP2LOC" ]]; then
   echo "ERR: IP2LOC-var not set in config.sh"
