@@ -5,6 +5,11 @@
  */
 require __DIR__ . '/vendor/autoload.php';
 
+function geoip($ip) {
+    // Adjust here to change between IP-DB
+    return maxmind($ip);
+}
+
 function ip2loc($ip) {
     $idx = strpos($ip, ",");
     if ($idx !== false) {
