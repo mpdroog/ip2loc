@@ -19,19 +19,21 @@ mkdir -p "/tmp/geoip"
 mkdir -p "/usr/local/share/GeoIP"
 
 # IP2Loc
-curl --fail --no-progress-meter "https://www.ip2location.com/download/?token=$IP2LOC&file=DB11LITEBIN" -o /tmp/geoip/DB11LITEBIN.zip
+curl --fail --no-progress-meter -L "https://www.ip2location.com/download/?token=$IP2LOC&file=DB1LITEBIN" -o /tmp/geoip/DB1LITEBIN.zip
 cd /tmp/geoip
-unzip -o -q DB11LITEBIN.zip
-mv IP2LOCATION-LITE-DB11.BIN "/usr/local/share/GeoIP"
+unzip -o -q DB1LITEBIN.zip
+chmod 444 IP2LOCATION-LITE-DB1.BIN
+mv IP2LOCATION-LITE-DB1.BIN "/usr/local/share/GeoIP"
 
-curl --fail --no-progress-meter "https://www.ip2location.com/download/?token=$IP2LOC&file=DB11LITEBINIPV6" -o /tmp/geoip/DB11LITEBINIPV6.zip
+curl --fail --no-progress-meter -L "https://www.ip2location.com/download/?token=$IP2LOC&file=DB1LITEBINIPV6" -o /tmp/geoip/DB1LITEBINIPV6.zip
 cd /tmp/geoip
-unzip -o -q DB11LITEBINIPV6.zip
-mv IP2LOCATION-LITE-DB11.IPV6.BIN "/usr/local/share/GeoIP"
+unzip -o -q DB1LITEBINIPV6.zip
+chmod 444 IP2LOCATION-LITE-DB1.IPV6.BIN
+mv IP2LOCATION-LITE-DB1.IPV6.BIN "/usr/local/share/GeoIP"
 
 # Maxmind
-curl --fail --no-progress-meter "https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-City&license_key=$MAXMIND&suffix=tar.gz" -o /tmp/geoip/city.mmdb.tgz
-curl --fail --no-progress-meter "https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-ASN&license_key=$MAXMIND&suffix=tar.gz" -o /tmp/geoip/asn.mmdb.tgz
+curl --fail --no-progress-meter --location "https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-City&license_key=$MAXMIND&suffix=tar.gz" -o /tmp/geoip/city.mmdb.tgz
+curl --fail --no-progress-meter --location "https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-ASN&license_key=$MAXMIND&suffix=tar.gz" -o /tmp/geoip/asn.mmdb.tgz
 
 tar -zxf /tmp/geoip/city.mmdb.tgz -C /tmp/geoip --strip-components=1
 tar -zxf /tmp/geoip/asn.mmdb.tgz -C /tmp/geoip --strip-components=1
